@@ -49,6 +49,7 @@ namespace soft806activity.Models
 
         public int Register(string password)
         {
+            Connection = new SqlConnection(ConnesctionString);
             using (SqlCommand cmd = new SqlCommand("insertUser"))
             {
                 cmd.CommandType = CommandType.StoredProcedure;
