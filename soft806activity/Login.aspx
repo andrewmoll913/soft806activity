@@ -14,8 +14,8 @@
                             <tr>
                                 <td align="right">Email</td>
                                 <td>
-                                    <asp:TextBox ID="Email" runat="server"></asp:TextBox>
-                                    <asp:RequiredFieldValidator ID="EmailRequired" runat="server" ControlToValidate="Email" ErrorMessage="Email Name is required." ToolTip="Email Name is required." ValidationGroup="UserLogin">*</asp:RequiredFieldValidator>
+                                    <asp:TextBox ID="UserName" runat="server"></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="UserNameRequired" runat="server" ControlToValidate="UserName" ErrorMessage="Email is required." ToolTip="Email is required." ValidationGroup="UserLogin">*</asp:RequiredFieldValidator>
                                 </td>
                             </tr>
                             <tr>
