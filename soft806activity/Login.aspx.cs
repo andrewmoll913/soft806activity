@@ -16,13 +16,12 @@ namespace soft806activity
 
         }
 
+        // This method handles the click event for the Login button
         protected void UserLoginAuthenticate(object sender, AuthenticateEventArgs e)
         {
             User user = new User(UserLogin.UserName.ToString());
 
-            int test = user.Authenticate(UserLogin.Password);
-
-            switch (test)
+            switch (user.Authenticate(UserLogin.Password))
             {
                 case -1:
                     UserLogin.FailureText = "The Account doesn't exist";

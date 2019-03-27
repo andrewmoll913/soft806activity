@@ -12,6 +12,11 @@
 </head>
 <body>
     <form runat="server">
+        <nav>
+            <asp:HyperLink ID="HomeLink" runat="server" NavigateUrl="~/Default.aspx">Home</asp:HyperLink>
+            <asp:HyperLink ID="RegisterLink" runat="server" NavigateUrl="~/Register.aspx">Register</asp:HyperLink>
+            <asp:LoginStatus ID="LoginStatus" runat="server" CssClass="" />
+        </nav>
         <asp:ContentPlaceHolder ID="BodyContent" runat="server">
         </asp:ContentPlaceHolder>
     </form>

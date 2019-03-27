@@ -30,6 +30,7 @@ namespace soft806activity.Models
             Email = email;
         }
 
+        // This method handles the login feature.
         public int Authenticate(string password)
         {
             Connection = new SqlConnection(ConnesctionString);
@@ -47,6 +48,7 @@ namespace soft806activity.Models
             return Id;
         }
 
+        // This method handles the registration feature.
         public int Register(string password)
         {
             Connection = new SqlConnection(ConnesctionString);

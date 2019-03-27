@@ -15,6 +15,7 @@ namespace soft806activity
 
         }
 
+        // This methond handles a click event for the registration button
         protected void RegisterButton_Click(object sender, EventArgs e)
         {
             User user = new User(FirstName.Text, LastName.Text, Email.Text);
@@ -25,7 +26,6 @@ namespace soft806activity
                     ControlText.Text = "The Account doesn't exist";
                     break;
                 default:
-                    ControlText.Text = "The Account was registered";
                     Response.Write("<script>alert('The Account was registered');window.location = 'Login.aspx';</script>");
                     break;
             }
