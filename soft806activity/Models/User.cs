@@ -23,6 +23,13 @@ namespace soft806activity.Models
             Email = email;
         }
 
+        public User(string firstName, string lastName, string email)
+        {
+            FirstName = firstName;
+            LastName = lastName;
+            Email = email;
+        }
+
         public int Authenticate(string password)
         {
             Connection = new SqlConnection(ConnesctionString);
@@ -30,6 +37,23 @@ namespace soft806activity.Models
             using (SqlCommand cmd = new SqlCommand("isValidUser"))
             {
                 cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@email", Email);
+                cmd.Parameters.AddWithValue("@password", password);
+                cmd.Connection = Connection;
+                Connection.Open();
+                Id = Convert.ToInt32(cmd.ExecuteScalar());
+                Connection.Close();
+            }
+            return Id;
+        }
+
+        public int Register(string password)
+        {
+            using (SqlCommand cmd = new SqlCommand("insertUser"))
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@first_name", FirstName);
+                cmd.Parameters.AddWithValue("@last_name", LastName);
                 cmd.Parameters.AddWithValue("@email", Email);
                 cmd.Parameters.AddWithValue("@password", password);
                 cmd.Connection = Connection;
